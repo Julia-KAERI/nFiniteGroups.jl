@@ -1,0 +1,4 @@
+name = "nFiniteGroups"
+uuid = "dc2ae139-e50a-4fc2-8438-b6cf65b9500c"
+authors = ["julia-KAERI <julia.kaeri@gmail.com>"]
+version = "0.1.0"

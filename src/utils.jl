@@ -1,8 +1,7 @@
 
-
 Base.:*(a::T, b::T) where T<:FiniteGroupElement = find_in_group_by_representation(a.group(), a.rep * b.rep)
 
-function find_class(G::T) where T<:FiniteGroup
+function classes(G::T) where T<:FiniteGroup
     elementset0 = [t.sym for (k, t) in Tet.elements]
     elementset = Set(elementset0)
     elementclass = []

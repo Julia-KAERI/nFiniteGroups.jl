@@ -6,6 +6,7 @@ include("base.jl")
 include("tetrahedral.jl")
 include("utils.jl")
 
-export FiniteGroup, FiniteGroupElement, TetrahedralGroup, TetrahedralElement
+export FiniteGroup, FiniteGroupElement 
+export TetrahedralGroup, TetrahedralElement, TetrahedralDiagonalGroup
 export find_in_group_by_representation, classes, inv
 end # module nFiniteGroups

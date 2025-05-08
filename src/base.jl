@@ -14,3 +14,4 @@ abstract type SpaceGroupClass <: FintieGroupClass end
 
 abstract type AbstractTetrahedralGroup <: PointGroup end
 abstract type AbstractTetrahedralGroupElement <: PointGroupElement end
+abstract type AbstractTetrahedralGroupClass <: PointGroupClass end

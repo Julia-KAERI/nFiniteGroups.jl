@@ -1,9 +1,5 @@
 Tetrahedral_symbol = [:E, :C2x, :C2y, :C2z, :C3a, :C3a2, :C3b, :C3b2, :C3c, :C3c2, :C3d, :C3d2]
-TetrahedralDiagonal_symbol = [:E, :C2x, :C2y, :C2z, :C3a, :C3a2, :C3b, :C3b2, :C3c, :C3c2, :C3d, :C3d2,
-    :σab, :σac, :σad, :σbc, :σbd, :σcd,
-    :Sx1, :Sx3,
-    :Sy1, :Sy3,
-    :Sz1, :Sz3]
+TetrahedralDiagonal_symbol = [:E, :C2x, :C2y, :C2z, :C3a, :C3a2, :C3b, :C3b2, :C3c, :C3c2, :C3d, :C3d2, :σab, :σac, :σad, :σbc, :σbd, :σcd, :Sx1, :Sx3, :Sy1, :Sy3, :Sz1, :Sz3]
     
 struct TetrahedralElement <: AbstractTetrahedralGroupElement   
     sym::Symbol
@@ -39,6 +35,7 @@ Base.show(io::IO, t::TetrahedralElement) = print(io, "$(t.sym) [TetrahedralEleme
 
 struct TetrahedralGroup<:AbstractTetrahedralGroup
     elements::Dict{Symbol, TetrahedralElement}
+    rep::String
     function TetrahedralGroup()
         els = Dict(
         :E => TetrahedralElement(:E, "abcd", :E),
@@ -54,13 +51,16 @@ struct TetrahedralGroup<:AbstractTetrahedralGroup
         :C3d => TetrahedralElement(:C3d, "bcad", :C3d2),
         :C3d2 => TetrahedralElement(:C3d2, "cabd", :C3d)
         )
-        return new(els)
+        return new(els, "T")
     end
 end
 
+struct TetrahedralGroupClass <: AbstractTetrahedralGroupClass
+end
 
 struct TetrahedralDiagonalGroup <: AbstractTetrahedralGroup
     elements::Dict{Symbol, TetrahedralElement}
+    rep::String
     function TetrahedralDiagonalGroup()
         els = Dict(
         :E => TetrahedralElement(:E, "abcd", :E, TetrahedralDiagonalGroup),
@@ -88,7 +88,18 @@ struct TetrahedralDiagonalGroup <: AbstractTetrahedralGroup
         :Sz1 => TetrahedralElement(:Sz1, "dabc", :Sz3, TetrahedralDiagonalGroup),
         :Sz3 => TetrahedralElement(:Sz3, "bcda", :Sz1, TetrahedralDiagonalGroup),
         )
-        return new(els)
+        return new(els, "Td")
     end
 end
 
+
+
+
+
+
+elements(t::TetrahedralGroup) = Tetrahedral_symbol 
+elements(t::TetrahedralDiagonalGroup) = TetrahedralDiagonal_symbol
+
+function Base.show(io::IO, t::AbstractTetrahedralGroup) 
+    print(io, "Td : ", elements)
+end

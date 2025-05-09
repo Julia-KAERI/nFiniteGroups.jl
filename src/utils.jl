@@ -1,5 +1,4 @@
 
-Base.:*(a::T, b::T) where T<:FiniteGroupElement = find_in_group_by_representation(a.group(), a.rep * b.rep)
 
 function (p::FiniteGroup)(s::Symbol)
     # @assert s in [:E, :C2x, :C2y, :C2z, :C3a, :C3a2, :C3b, :C3b2, :C3c, :C3c2, :C3d, :C3d2]
@@ -40,3 +39,4 @@ function classes(G::T) where T<:FiniteGroup
     end
     return elementclass
 end
+

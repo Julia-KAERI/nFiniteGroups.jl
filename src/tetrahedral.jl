@@ -93,13 +93,11 @@ struct TetrahedralDiagonalGroup <: AbstractTetrahedralGroup
 end
 
 
-
-
-
-
 elements(t::TetrahedralGroup) = Tetrahedral_symbol 
 elements(t::TetrahedralDiagonalGroup) = TetrahedralDiagonal_symbol
 
 function Base.show(io::IO, t::AbstractTetrahedralGroup) 
     print(io, "Td : ", elements)
 end
+
+Base.:*(a::T, b::T) where T<:PointGroupElement = find_in_group_by_representation(a.group(), a.rep * b.rep)

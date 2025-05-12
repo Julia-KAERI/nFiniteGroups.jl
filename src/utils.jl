@@ -11,6 +11,11 @@ end
 
 Base.:*(a::T, b::T) where T<:FiniteGroupElement = find_in_group_by_representation(a.group(), a.rep * b.rep)
 
+function gmul(a::T, b::T) where T<:FiniteGroupElement 
+    S = a.group()
+    return S(S.table[a.sym, b.sym])
+end
+
 function Base.show(io::IO, t::FiniteGroup) 
     println(io, "$(t.rep) [$(length(t.elements)) elements] : ", elements(t))
 end

@@ -19,5 +19,5 @@ export CGroup, CGroupElement, CvGroup, CvGroupElement, ChGroup, ChGroupElement
 export SGroup, SGroupElement
 export DGroup, DGroupElement, DdGroup, DdGroupElement, DhGroup, DhGroupElement
 export TetrahedralGroup, TetrahedralGroupElement, TetrahedralDiagonalGroup
-export find_in_group_by_representation, classes, inv, elements
+export find_in_group_by_representation, classes, inv, elements, gmul
 end # module nFiniteGroups

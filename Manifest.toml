@@ -2,7 +2,7 @@
 
 julia_version = "1.11.5"
 manifest_format = "2.0"
-project_hash = "0e6b9866ceb14b54006481899ec4b7af5d314a69"
+project_hash = "8c9b218c3845c6ec5a7e7d7ad92468e1d867d785"
 
 [[deps.Artifacts]]
 uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
@@ -26,6 +26,11 @@ version = "1.11.0"
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
 uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
 version = "0.3.27+1"
+
+[[deps.OrderedCollections]]
+git-tree-sha1 = "cc4054e898b852042d7b503313f7ad03de99c3dd"
+uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
+version = "1.8.0"
 
 [[deps.Printf]]
 deps = ["Unicode"]

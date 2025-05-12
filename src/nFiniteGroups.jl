@@ -1,6 +1,6 @@
 module nFiniteGroups
 
-using LinearAlgebra, Printf
+using LinearAlgebra, Printf, OrderedCollections
 
 include("base.jl")
 include("CnGroup.jl")
@@ -15,9 +15,9 @@ export FiniteGroup, FiniteGroupElement, FiniteGroupClass, FiniteGroupRepresentat
 export PointGroup, SpaceGroup, PointGroupElement, SpaceGroupElement
 export PointGroupRepresentation, SpaceGroupRepresentation
 export AbstractTetrahedralGroup, AbstractTetrahedralGroupElement, AbstractTetrahedralGroupClass 
-export CGroup, CGroupElement, CVGroup, CVGroupElement, CHGroup, CHGroupElement
+export CGroup, CGroupElement, CvGroup, CvGroupElement, ChGroup, ChGroupElement
 export SGroup, SGroupElement
-export DGroup, DGroupElement, DndGroup, DndGroupElement, DnhGroup, DnhGroupElement
-export TetrahedralGroup, TetrahedralElement, TetrahedralDiagonalGroup
+export DGroup, DGroupElement, DdGroup, DdGroupElement, DhGroup, DhGroupElement
+export TetrahedralGroup, TetrahedralGroupElement, TetrahedralDiagonalGroup
 export find_in_group_by_representation, classes, inv, elements
 end # module nFiniteGroups

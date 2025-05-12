@@ -291,10 +291,10 @@
         \fill[shift={({cos(225)}, {sin(225)})}, rotate=225] (0,0) ellipse (0.05 and 0.1);
         \fill[shift={({cos(270)}, {sin(270)})}, rotate=270] (0,0) ellipse (0.05 and 0.1);
         \fill[shift={({cos(315)}, {sin(315)})}, rotate=315] (0,0) ellipse (0.05 and 0.1);
-        \draw[very thick] ({cos(0)}, {sin(0)}) -- ({cos(180)}, {sin(180)});
-        \draw[very thick] ({cos(45)}, {sin(45)}) -- ({cos(225)}, {sin(225)});
-        \draw[very thick] ({cos(90)}, {sin(90)}) -- ({cos(270)}, {sin(270)});
-        \draw[very thick] ({cos(135)}, {sin(135)}) -- ({cos(315)}, {sin(315)});
+        \draw[very thick] ({cos(0)}, {sin(0)}) node [teal, right, scale=1.5] {$\sigma_1$} -- ({cos(180)}, {sin(180)});
+        \draw[very thick] ({cos(45)}, {sin(45)}) node [teal, above right, scale=1.5] {$\sigma_2$} -- ({cos(225)}, {sin(225)});
+        \draw[very thick] ({cos(90)}, {sin(90)}) node [teal, above, scale=1.5] {$\sigma_3$} -- ({cos(270)}, {sin(270)});
+        \draw[very thick] ({cos(135)}, {sin(135)}) node [teal, above left, scale=1.5] {$\sigma_4$}-- ({cos(315)}, {sin(315)});
         \node[blue, scale=1.5] at ({\Rb*cos(10)}, {\Rb*sin(10)}) {$\boldsymbol{a}$};
         \node[blue, scale=1.5] at ({\Rb*cos(80)}, {\Rb*sin(80)}) {$\boldsymbol{b}$};
         \node[blue, scale=1.5] at ({\Rb*cos(100)}, {\Rb*sin(100)}) {$\boldsymbol{c}$};
@@ -317,8 +317,9 @@
     \begin{scope}[xshift=11.2cm, yshift=-8.4cm]
         \def\Ra{1.3};
         \def\Rb{0.8};
+        \def\Rc{0.65};
         \draw[very thick](0,0) circle (1);
-        \node[scale=2] at ({\Ra*cos(315)}, {\Ra*sin(315)}) {$D_{6h}$};
+        \node[scale=2] at ({\Ra*cos(315)+0.3}, {\Ra*sin(315)}) {$D_{6h}$};
         \node[fill,minimum size=0.6cm,regular polygon,regular polygon sides=6] at (0, 0) {};
         \fill[shift={({cos(0)}, {sin(0)})}, rotate=0] (0,0) ellipse (0.05 and 0.1);
         \fill[shift={({cos(30)}, {sin(30)})}, rotate=30] (0,0) ellipse (0.05 and 0.1);
@@ -332,24 +333,37 @@
         \fill[shift={({cos(270)}, {sin(270)})}, rotate=270] (0,0) ellipse (0.05 and 0.1);
         \fill[shift={({cos(300)}, {sin(300)})}, rotate=300] (0,0) ellipse (0.05 and 0.1);
         \fill[shift={({cos(330)}, {sin(330)})}, rotate=330] (0,0) ellipse (0.05 and 0.1);
-        \draw[very thick] ({cos(0)}, {sin(0)}) -- ({cos(180)}, {sin(180)});
-        \draw[very thick] ({cos(30)}, {sin(30)}) -- ({cos(210)}, {sin(210)});
-        \draw[very thick] ({cos(60)}, {sin(60)}) -- ({cos(240)}, {sin(240)});
-        \draw[very thick] ({cos(90)}, {sin(90)}) -- ({cos(270)}, {sin(270)});
-        \draw[very thick] ({cos(120)}, {sin(120)}) -- ({cos(300)}, {sin(300)});
-        \draw[very thick] ({cos(150)}, {sin(150)}) -- ({cos(330)}, {sin(330)});
-        \node[scale=1.5] at ({\Rb*cos(20)}, {\Rb*sin(20)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(40)}, {\Rb*sin(40)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(80)}, {\Rb*sin(80)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(100)}, {\Rb*sin(100)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(140)}, {\Rb*sin(140)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(160)}, {\Rb*sin(160)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(200)}, {\Rb*sin(200)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(220)}, {\Rb*sin(220)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(260)}, {\Rb*sin(260)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(280)}, {\Rb*sin(280)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(320)}, {\Rb*sin(320)}) {$\oplus$};
-        \node[scale=1.5] at ({\Rb*cos(340)}, {\Rb*sin(340)}) {$\oplus$};
+        \draw[very thick] ({cos(0)}, {sin(0)}) -- ({cos(180)}, {sin(180)}) node [teal, left, scale=1.5] {$\sigma_6$};
+        \draw[very thick] ({cos(30)}, {sin(30)}) node [teal, right, scale=1.5] {$\sigma_1$} -- ({cos(210)}, {sin(210)});
+        \draw[very thick] ({cos(60)}, {sin(60)}) node [teal, above right, scale=1.5] {$\sigma_2$} -- ({cos(240)}, {sin(240)});
+        \draw[very thick] ({cos(90)}, {sin(90)}) node [teal, above, scale=1.5] {$\sigma_3$}-- ({cos(270)}, {sin(270)});
+        \draw[very thick] ({cos(120)}, {sin(120)}) node [teal, above left, scale=1.5] {$\sigma_4$}-- ({cos(300)}, {sin(300)});
+        \draw[very thick] ({cos(150)}, {sin(150)}) node [teal, left, scale=1.5] {$\sigma_5$}-- ({cos(330)}, {sin(330)});
+        \node[blue, scale=1.5] at ({\Rb*cos(20)}, {\Rb*sin(20)}) {$\boldsymbol{a}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(40)}, {\Rb*sin(40)}) {$\boldsymbol{b}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(80)}, {\Rb*sin(80)}) {$\boldsymbol{c}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(100)}, {\Rb*sin(100)}) {$\boldsymbol{d}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(140)}, {\Rb*sin(140)}) {$\boldsymbol{e}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(160)}, {\Rb*sin(160)}) {$\boldsymbol{f}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(200)}, {\Rb*sin(200)}) {$\boldsymbol{g}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(220)}, {\Rb*sin(220)}) {$\boldsymbol{h}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(260)}, {\Rb*sin(260)}) {$\boldsymbol{i}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(280)}, {\Rb*sin(280)}) {$\boldsymbol{j}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(320)}, {\Rb*sin(320)}) {$\boldsymbol{k}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(340)}, {\Rb*sin(340)}) {$\boldsymbol{l}$};
+
+        \node[red, scale=1.5] at ({\Rc*cos(20)}, {\Rc*sin(20)}) {$\boldsymbol{m}$};
+        \node[red, scale=1.5] at ({\Rc*cos(40)}, {\Rc*sin(40)}) {$\boldsymbol{n}$};
+        \node[red, scale=1.5] at ({\Rc*cos(80)}, {\Rc*sin(80)}) {$\boldsymbol{o}$};
+        \node[red, scale=1.5] at ({\Rc*cos(100)}, {\Rc*sin(100)}) {$\boldsymbol{p}$};
+        \node[red, scale=1.5] at ({\Rc*cos(140)}, {\Rc*sin(140)}) {$\boldsymbol{q}$};
+        \node[red, scale=1.5] at ({\Rc*cos(160)}, {\Rc*sin(160)}) {$\boldsymbol{r}$};
+        \node[red, scale=1.5] at ({\Rc*cos(200)}, {\Rc*sin(200)}) {$\boldsymbol{s}$};
+        \node[red, scale=1.5] at ({\Rc*cos(220)}, {\Rc*sin(220)}) {$\boldsymbol{t}$};
+        \node[red, scale=1.5] at ({\Rc*cos(260)}, {\Rc*sin(260)}) {$\boldsymbol{u}$};
+        \node[red, scale=1.5] at ({\Rc*cos(280)}, {\Rc*sin(280)}) {$\boldsymbol{v}$};
+        \node[red, scale=1.5] at ({\Rc*cos(320)}, {\Rc*sin(320)}) {$\boldsymbol{w}$};
+        \node[red, scale=1.5] at ({\Rc*cos(340)}, {\Rc*sin(340)}) {$\boldsymbol{x}$};
     \end{scope}
 \end{tikzpicture}
 \end{document}

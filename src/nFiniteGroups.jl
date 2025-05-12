@@ -6,6 +6,8 @@ include("base.jl")
 include("CnGroup.jl")
 include("CnvGroup.jl")
 include("CnhGroup.jl")
+include("SnGroup.jl")
+include("DnGroup.jl")
 include("tetrahedral.jl")
 include("utils.jl")
 
@@ -14,6 +16,8 @@ export PointGroup, SpaceGroup, PointGroupElement, SpaceGroupElement
 export PointGroupRepresentation, SpaceGroupRepresentation
 export AbstractTetrahedralGroup, AbstractTetrahedralGroupElement, AbstractTetrahedralGroupClass 
 export CGroup, CGroupElement, CVGroup, CVGroupElement, CHGroup, CHGroupElement
+export SGroup, SGroupElement
+export DGroup, DGroupElement, DndGroup, DndGroupElement, DnhGroup, DnhGroupElement
 export TetrahedralGroup, TetrahedralElement, TetrahedralDiagonalGroup
 export find_in_group_by_representation, classes, inv, elements
 end # module nFiniteGroups

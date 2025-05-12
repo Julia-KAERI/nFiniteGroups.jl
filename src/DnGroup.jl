@@ -223,7 +223,7 @@ struct DnhGroup{N} <: PointGroup where N
                 :E => DnhGroupElement(N, :E,            "abcdefghijklmnop", :E),
                 :C41 => DnhGroupElement(N, :C41,        "cdefghabklmnopij", :C43),
                 :C21 => DnhGroupElement(N, :C21,        "efghabcdmnopijkl", :C21),
-                :C43 => DnhGroupElement(N, :C43,        "ghabcdefopijklmn", :σ1),
+                :C43 => DnhGroupElement(N, :C43,        "ghabcdefopijklmn", :C41),
                 :σ2 => DnhGroupElement(N, :σ2,          "bafedchglkji", :σ2),
                 :σ3 => DnhGroupElement(N, :σ3,          "dcbafejihglk", :σ3),
                 :σh => DnhGroupElement(N, :σh,          "ghijklabcdef", :σh),

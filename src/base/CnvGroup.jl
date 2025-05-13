@@ -1,4 +1,4 @@
-struct CvGroupElement{N} <: AbstractCGroupElement{N}
+struct CvGroupElement{N} <: AbstractCBaseGroupElement{N}
     sym::Symbol
     rep::Matrix{Int64}
     inv::Union{Nothing, Symbol}

@@ -2,7 +2,7 @@
 abstract type AbstractDGroup{N} <: PointGroup end
 abstract type AbstractDGroupElement{N} <: PointGroupElement end
 
-struct DGroupElement{N} <: AbstractCGroupElement{N}
+struct DGroupElement{N} <: AbstractCBaseGroupElement{N}
     sym::Symbol
     rep::Matrix{Int64}
     inv::Union{Nothing, Symbol}
@@ -79,7 +79,7 @@ end
 
 DGroup(N) = DGroup{N}()
 
-struct DdGroupElement{N} <: AbstractCGroupElement{N}
+struct DdGroupElement{N} <: AbstractCBaseGroupElement{N}
     sym::Symbol
     rep::Matrix{Int64}
     inv::Union{Nothing, Symbol}
@@ -151,7 +151,7 @@ DdGroup(N) = DdGroup{N}()
 # elements(G::DdGroup{N}) where N = [k for (k, t) in G.elements]
 # Base.:*(a::T, b::T) where T<:DdGroupElement = find_in_group_by_representation(a.group(), a.rep * b.rep)
 
-struct DhGroupElement{N} <: AbstractCGroupElement{N}
+struct DhGroupElement{N} <: AbstractCBaseGroupElement{N}
     sym::Symbol
     rep::Matrix{Int64}
     inv::Union{Nothing, Symbol}

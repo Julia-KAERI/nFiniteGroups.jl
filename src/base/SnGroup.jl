@@ -1,4 +1,4 @@
-struct SGroupElement{N} <: AbstractCGroupElement{N}
+struct SGroupElement{N} <: AbstractCBaseGroupElement{N}
     sym::Symbol
     rep::Matrix{Int64}
     inv::Union{Nothing, Symbol}

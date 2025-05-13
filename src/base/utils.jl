@@ -1,13 +1,23 @@
-function (p::FiniteGroup)(s::Symbol)
-    # @assert s in [:E, :C2x, :C2y, :C2z, :C3a, :C3a2, :C3b, :C3b2, :C3c, :C3c2, :C3d, :C3d2]
+function (p::BaseGroup)(s::Symbol)
     return p.elements[s]
 end
 
+function (p::FiniteGroup)(s::Symbol)
+    return keys(p.elements)
+end
+
+
 elements(G::FiniteGroup) = [k for (k, v) in G.elements]
 
-function Base.show(io::IO, t::FiniteGroupElement) 
+function Base.show(io::IO, t::BaseGroup) 
     println(io, "$(t.sym) [$(t.group().rep)]")
 end
+
+function Base.show(io::IO, t::FiniteGroup) 
+    println(io, "$(t.sym) [$(length(t.elements)) elements] : ", elements(t))
+end
+
+
 
 Base.:*(a::T, b::T) where T<:FiniteGroupElement = find_in_group_by_representation(a.group(), a.rep * b.rep)
 
@@ -16,9 +26,6 @@ function gmul(a::T, b::T) where T<:FiniteGroupElement
     return S(S.table[a.sym, b.sym])
 end
 
-function Base.show(io::IO, t::FiniteGroup) 
-    println(io, "$(t.rep) [$(length(t.elements)) elements] : ", elements(t))
-end
 
 
 """
@@ -43,6 +50,10 @@ end
 
 
 function Base.inv(t::FiniteGroupElement) 
+    return t.inv
+end
+
+function Base.inv(t::BaseGroupElement) 
     if t.inv == nothing
         return nothing
     else
@@ -50,6 +61,7 @@ function Base.inv(t::FiniteGroupElement)
         return x(t.inv)
     end
 end
+
 
 
 function find_in_group_by_representation(G::T, rep) where T<:FiniteGroup

@@ -2,22 +2,28 @@ module nFiniteGroups
 
 using LinearAlgebra, Printf, OrderedCollections
 
-include("base.jl")
+include("base/base.jl")
+include("base/CnBaseGroup.jl")
+include("base/CnvGroup.jl")
+include("base/CnhGroup.jl")
+include("base/SnGroup.jl")
+include("base/DnGroup.jl")
+include("base/tetrahedral.jl")
+include("base/utils.jl")
+
 include("CnGroup.jl")
-include("CnvGroup.jl")
-include("CnhGroup.jl")
-include("SnGroup.jl")
-include("DnGroup.jl")
-include("tetrahedral.jl")
-include("utils.jl")
 
 export FiniteGroup, FiniteGroupElement, FiniteGroupClass, FiniteGroupRepresentation
 export PointGroup, SpaceGroup, PointGroupElement, SpaceGroupElement
 export PointGroupRepresentation, SpaceGroupRepresentation
-export AbstractTetrahedralGroup, AbstractTetrahedralGroupElement, AbstractTetrahedralGroupClass 
-export CGroup, CGroupElement, CvGroup, CvGroupElement, ChGroup, ChGroupElement
-export SGroup, SGroupElement
-export DGroup, DGroupElement, DdGroup, DdGroupElement, DhGroup, DhGroupElement
-export TetrahedralGroup, TetrahedralGroupElement, TetrahedralDiagonalGroup
+export AbstractTetrahedraBaseGroup, AbstractTetrahedraBaseGroupElement, AbstractTetrahedraBaseGroupClass 
+export CBaseGroup, CBaseGroupElement, CvBaseGroup, CvBaseGroupElement, ChBaseGroup, ChBaseGroupElement
+export SBaseGroup, SBaseGroupElement
+export DBaseGroup, DBaseGroupElement, DdBaseGroup, DdBaseGroupElement, DhBaseGroup, DhBaseGroupElement
+export TetrahedraBaseGroup, TetrahedraBaseGroupElement, TetrahedralDiagonalGroup
 export find_in_group_by_representation, classes, inv, elements, gmul
+
+
+export CGroup, CGroupElement
+
 end # module nFiniteGroups

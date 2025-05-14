@@ -2,24 +2,18 @@ function (p::BaseGroup)(s::Symbol)
     return p.elements[s]
 end
 
-function (p::FiniteGroup)(s::Symbol)
-    return keys(p.elements)
+elements(G::BaseGroup) = keys(G.elements)
+
+function Base.show(io::IO, t::BaseGroupElement) 
+    println(io, "$(t.sym) [$(t.group().sym)]")
 end
-
-
-elements(G::FiniteGroup) = [k for (k, v) in G.elements]
 
 function Base.show(io::IO, t::BaseGroup) 
-    println(io, "$(t.sym) [$(t.group().rep)]")
-end
-
-function Base.show(io::IO, t::FiniteGroup) 
     println(io, "$(t.sym) [$(length(t.elements)) elements] : ", elements(t))
 end
 
 
-
-Base.:*(a::T, b::T) where T<:FiniteGroupElement = find_in_group_by_representation(a.group(), a.rep * b.rep)
+Base.:*(a::T, b::T) where T<:BaseGroupElement = find_in_group_by_representation(a.group(), a.rep * b.rep)
 
 function gmul(a::T, b::T) where T<:FiniteGroupElement 
     S = a.group()
@@ -48,11 +42,6 @@ function char2row(c::Char, N)
     return s
 end
 
-
-function Base.inv(t::FiniteGroupElement) 
-    return t.inv
-end
-
 function Base.inv(t::BaseGroupElement) 
     if t.inv == nothing
         return nothing
@@ -64,7 +53,7 @@ end
 
 
 
-function find_in_group_by_representation(G::T, rep) where T<:FiniteGroup
+function find_in_group_by_representation(G::T, rep) where T<:BaseGroup
     for (key, value) in G.elements
         if value.rep == rep
             return G(key)
@@ -94,7 +83,9 @@ function multiplication_table(D::LittleDict)
     return table
 end
 
-function classes(G::T) where T<:FiniteGroup
+
+
+function classes(G::T) where T<:BaseGroup
     elementset0 = [t.sym for (k, t) in G.elements]
     elementset = Set(elementset0)
     elementclass = []

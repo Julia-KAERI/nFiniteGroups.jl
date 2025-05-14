@@ -16,8 +16,6 @@ abstract type PointGroup <: FiniteGroup end
 abstract type SpaceGroup <: FiniteGroup end
 abstract type PointGroupElement <: FiniteGroupElement end
 abstract type SpaceGroupElement <: FiniteGroupElement end
-abstract type PointGroupRepresentation <: FiniteGroupRepresentation end
-abstract type SpaceGroupRepresentation <: FiniteGroupRepresentation end
 abstract type PointGroupClass <: FintieGroupClass end   
 abstract type SpaceGroupClass <: FintieGroupClass end
 

@@ -13,17 +13,17 @@ struct CBaseGroupElement{N} <: AbstractCBaseGroupElement{N}
     end
 end
 
-struct CBaseGroup{N} <: PointGroup where N
+struct CBaseGroup{N} <: AbstractCBaseGroup{N}
 
     elements::LittleDict{Symbol, CBaseGroupElement{N}}
-    rep::String
+    sym::Symbol
     order::Integer
     table::LittleDict{Tuple{Symbol, Symbol}, Symbol}   
     function CBaseGroup{N}() where N
         if N == 2
             els = LittleDict(
                 :E => CBaseGroupElement(N, :E, "ab", :E),
-                :C21 => CBaseGroupElement(N, :C21, "bc", :C21),
+                :C21 => CBaseGroupElement(N, :C21, "ba", :C21),
             )
             
         elseif N == 3
@@ -53,7 +53,7 @@ struct CBaseGroup{N} <: PointGroup where N
         end
 
         tb = multiplication_table(els)
-        return new{N}(els, "C$N", N, tb)
+        return new{N}(els, Symbol("C$N"), N, tb)
     end
 
 end

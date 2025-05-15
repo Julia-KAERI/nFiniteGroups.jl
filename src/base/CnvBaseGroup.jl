@@ -13,8 +13,6 @@ struct CvBaseGroupElement{N} <: AbstractCBaseGroupElement{N}
         end
         return new{N}(sym, mat, inv, CvBaseGroup{N})
     end
-
-
 end
 
 struct CvBaseGroup{N} <: AbstractCBaseGroup{N}
@@ -43,21 +41,33 @@ struct CvBaseGroup{N} <: AbstractCBaseGroup{N}
             els = LittleDict(
                 :E => CvBaseGroupElement(N, :E, "abcdefgh", :E),
                 :C41 => CvBaseGroupElement(N, :C41, "cdefghab", :C43),
-                :C42 => CvBaseGroupElement(N, :C42, "efghabcd", :C42),
+                :C21 => CvBaseGroupElement(N, :C21, "efghabcd", :C21),
                 :C43 => CvBaseGroupElement(N, :C43, "ghabcdef", :C41),
                 :σ1 => CvBaseGroupElement(N, :σ1, "hgfedcba", :σ1),
                 :σ2 => CvBaseGroupElement(N, :σ2, "dcbahgfe", :σ2),
                 :σ1d => CvBaseGroupElement(N, :σ2, "bahgfedc", :σ1d),
                 :σ2d => CvBaseGroupElement(N, :σ2, "fedcbahg", :σ2d),
             )
-
+        elseif N == 5
+            els = LittleDict(
+                :E => CvBaseGroupElement(N, :E,     "abcdefghij", :E),
+                :C51 => CvBaseGroupElement(N, :C41, "cdefghijab", :C54),
+                :C52 => CvBaseGroupElement(N, :C52, "efghijabcd", :C53),
+                :C53 => CvBaseGroupElement(N, :C53, "ghijabcdef", :C52),
+                :C54 => CvBaseGroupElement(N, :S54, "ijabcdefgh", :C51),
+                :σ1 => CvBaseGroupElement(N, :σ1,   "bajihgfedc", :σ1),
+                :σ2 => CvBaseGroupElement(N, :σ2,   "fedcbajihg", :σ2),
+                :σ3 => CvBaseGroupElement(N, :σ3,   "jihgfedcba", :σ3),
+                :σ4 => CvBaseGroupElement(N, :σ4,   "dcbajihgfe", :σ4),
+                :σ5 => CvBaseGroupElement(N, :σ5,   "hgfedcbaji", :σ5),
+            )
         elseif N == 6
             els = LittleDict(
                 :E => CvBaseGroupElement(N, :E,     "abcdefghijkl", :E),
                 :C61 => CvBaseGroupElement(N, :C61, "cdefghijklab", :C65),
-                :C62 => CvBaseGroupElement(N, :C62, "efghijklabcd", :C64),
-                :C63 => CvBaseGroupElement(N, :C63, "ghijklabcdef", :C63),
-                :C64 => CvBaseGroupElement(N, :C64, "ijklabcdefgh", :C62),
+                :C31 => CvBaseGroupElement(N, :C31, "efghijklabcd", :C32),
+                :C21 => CvBaseGroupElement(N, :C21, "ghijklabcdef", :C21),
+                :C32 => CvBaseGroupElement(N, :C32, "ijklabcdefgh", :C31),
                 :C65 => CvBaseGroupElement(N, :C65, "klabcdefghij", :C61),
                 :σ1 => CvBaseGroupElement(N, :σ1,   "lkjihgfedcba", :σ1),
                 :σ2 => CvBaseGroupElement(N, :σ2,   "dcbalkjihgfe", :σ2),

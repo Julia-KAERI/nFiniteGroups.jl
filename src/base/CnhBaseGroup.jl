@@ -48,30 +48,42 @@ struct ChBaseGroup{N} <: AbstractCBaseGroup{N}
 
         elseif N == 4
             els = LittleDict(
-                :E => ChBaseGroupElement(N, :E, "abcdefgh", :E),
-                :C41 => ChBaseGroupElement(N, :C41, "cdefghab", :C43),
-                :C21 => ChBaseGroupElement(N, :C21, "efghabcd", :C21),
-                :C43 => ChBaseGroupElement(N, :C43, "ghabcdef", :C41),
-                :σ1 => ChBaseGroupElement(N, :σ1, "hgfedcba", :σ1),
-                :σ2 => ChBaseGroupElement(N, :σ2, "dcbahgfe", :σ2),
-                :σ1d => ChBaseGroupElement(N, :σ2, "bahgfedc", :σ1d),
-                :σ2d => ChBaseGroupElement(N, :σ2, "fedcbahg", :σ2d),
+                :E => ChBaseGroupElement(N, :E,     "abcdefgh", :E),
+                :C41 => ChBaseGroupElement(N, :C41, "bcdafghe", :C43),
+                :C21 => ChBaseGroupElement(N, :C21, "cdabghef", :C21),
+                :C43 => ChBaseGroupElement(N, :C43, "dabchefg", :C41),
+                :σh => ChBaseGroupElement(N, :σh,   "efghabcd", :σh),
+                :S41 => ChBaseGroupElement(N, :S41, "fghebcda", :S43),
+                :i => ChBaseGroupElement(N, :i,     "ghefcdab", :i),
+                :S43 => ChBaseGroupElement(N, :S43, "hefgdabc", :S41),
             )
-
+        elseif N == 5
+            els = LittleDict(
+                :E => ChBaseGroupElement(N, :E,     "abcdefghij", :E),
+                :C51 => ChBaseGroupElement(N, :C51, "bcdeaghijf", :C54),
+                :C52 => ChBaseGroupElement(N, :C52, "cdeabhijfg", :C53),
+                :C53 => ChBaseGroupElement(N, :C53, "deabcijfgh", :C52),
+                :C54 => ChBaseGroupElement(N, :C54, "eabcdjfghi", :C51),
+                :σh => ChBaseGroupElement(N, :σh,   "fghijabcde", :σh),
+                :S51 => ChBaseGroupElement(N, :S51, "ghijfbcdea", :S54),
+                :S52 => ChBaseGroupElement(N, :S52, "hijfgcdeab", :S53),
+                :S53 => ChBaseGroupElement(N, :S53, "ijfghdeabc", :S52),
+                :S54 => ChBaseGroupElement(N, :S54, "jfghieabcd", :S51),
+            )
         elseif N == 6
             els = LittleDict(
                 :E => ChBaseGroupElement(N, :E,     "abcdefghijkl", :E),
-                :C61 => ChBaseGroupElement(N, :C61, "cdefghijklab", :C65),
-                :C31 => ChBaseGroupElement(N, :C31, "efghijklabcd", :C32),
-                :C21 => ChBaseGroupElement(N, :C21, "ghijklabcdef", :C21),
-                :C32 => ChBaseGroupElement(N, :C32, "ijklabcdefgh", :C31),
-                :C65 => ChBaseGroupElement(N, :C65, "klabcdefghij", :C61),
-                :σ1 => ChBaseGroupElement(N, :σ1,   "lkjihgfedcba", :σ1),
-                :σ2 => ChBaseGroupElement(N, :σ2,   "dcbalkjihgfe", :σ2),
-                :σ3 => ChBaseGroupElement(N, :σ3,   "hgfedcbalkji", :σ3),
-                :σ1d => ChBaseGroupElement(N, :σ1d, "balkjihgfedc", :σ1d),
-                :σ2d => ChBaseGroupElement(N, :σ2d, "fedcbalkjihg", :σ2d),
-                :σ3d => ChBaseGroupElement(N, :σ3d, "jihgfedcbalk", :σ3d),
+                :C61 => ChBaseGroupElement(N, :C61, "bcdefahijklg", :C65),
+                :C31 => ChBaseGroupElement(N, :C31, "cdefabijklgh", :C32),
+                :C21 => ChBaseGroupElement(N, :C21, "defabcjklghi", :C21),
+                :C32 => ChBaseGroupElement(N, :C32, "efabcdklghij", :C31),
+                :C65 => ChBaseGroupElement(N, :C65, "fabcdelghijk", :C61),
+                :σh => ChBaseGroupElement(N, :σh,   "ghijklabcdef", :σh),
+                :S61 => ChBaseGroupElement(N, :S61, "hijklgbcdefa", :S65),
+                :S31 => ChBaseGroupElement(N, :S31, "ijklghcdefab", :S32),
+                :i => ChBaseGroupElement(N, :i,     "jklghidefabc", :i),
+                :S32 => ChBaseGroupElement(N, :S32, "klghijefabcd", :S31),
+                :S65 => ChBaseGroupElement(N, :S65, "lghijkfabcde", :S61),
             )
         end
 

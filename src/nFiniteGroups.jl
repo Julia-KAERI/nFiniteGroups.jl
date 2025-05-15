@@ -18,6 +18,7 @@ include("base/baseutils.jl")
 include("CnGroup.jl")
 include("CnvGroup.jl")
 include("CnhGroup.jl")
+include("DnGroup.jl")
 include("utils.jl")
 
 export FiniteGroup, FiniteGroupElement, FiniteGroupClass, FiniteGroupRepresentation
@@ -36,4 +37,6 @@ export find_in_group_by_representation, classes, inv, elements, gmul, multiplica
 export CGroup, CGroupElement
 export CvGroup, CvGroupElement
 export ChGroup, ChGroupElement
+export DGroup, DGroupElement
+export order, char2row
 end # module nFiniteGroups

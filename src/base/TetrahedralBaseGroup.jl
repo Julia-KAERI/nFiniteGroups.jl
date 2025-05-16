@@ -40,6 +40,23 @@ struct TetrahedralBaseGroup<:BaseGroup
     end
 end
 
+struct TetrahedralDiagonalBaseGroupElement <: BaseGroupElement
+    sym::Symbol
+    rep::Matrix{Int64}
+    inv::Union{Nothing, Symbol}
+    group
+
+    function TetrahedralBaseGroupElement(s::Symbol, nn::String, inv::Union{Nothing, Symbol} = nothing, grp=TetrahedralDiagonalBaseGroup)
+        @assert length(nn) == 4
+        @assert all(c -> c in "abcd", nn)
+        mat = zeros(Int64, 4, 4) 
+        for i in 1:4
+            mat[:, i] = char2row(nn[i], 4)
+        end
+        return new(s, mat, inv, grp)
+    end
+end
+
 struct TetrahedralDiagonalBaseGroup <: BaseGroup
     elements::Dict{Symbol, TetrahedralBaseGroupElement}
     sym::Symbol

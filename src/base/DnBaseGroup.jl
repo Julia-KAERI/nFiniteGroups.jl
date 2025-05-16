@@ -51,6 +51,20 @@ struct DBaseGroup{N} <: AbstractCBaseGroup{N}
                 :d4 => DBaseGroupElement(N, :d4, "hgfedcba", :d4),
             )
 
+        elseif N == 5
+            els = LittleDict(
+                :E => DBaseGroupElement(N, :E,     "abcdefghij", :E),
+                :C51 => DBaseGroupElement(N, :C51, "bcdeaghijf", :C54),
+                :C52 => DBaseGroupElement(N, :C52, "cdeabhijfg", :C53),
+                :C53 => DBaseGroupElement(N, :C53, "deabcijfgh", :C52),
+                :C54 => DBaseGroupElement(N, :C54, "eabcdjfghi", :C51),
+                :d1 => DBaseGroupElement(N, :d1,    "fjihgaedcb", :d1),
+                :d2 => DBaseGroupElement(N, :d2,    "gfjihbaedc", :d2),
+                :d3 => DBaseGroupElement(N, :d3,    "hgfjicbaed", :d3),
+                :d4 => DBaseGroupElement(N, :d4,    "ihgfjdcbae", :d4),
+                :d5 => DBaseGroupElement(N, :d5,    "jihgfedcba", :d5),
+            )
+    
         elseif N == 6
             els = LittleDict(
                 :E => DBaseGroupElement(N, :E,     "abcdefghijkl", :E),
@@ -210,12 +224,34 @@ struct DhBaseGroup{N} <: AbstractCBaseGroup{N}
                 :σ3σh => DhBaseGroupElement(N, :σ3σh,       "lkjiponmdcbahgfe", :σ3σh),
                 :σ4σh => DhBaseGroupElement(N, :σ4σh,       "nmlkjipofedcbahg", :σ4σh),
             )
-            
+        elseif N == 5
+            els = LittleDict(
+                :E => DhBaseGroupElement(N, :E,            "abcdefghijklmnopqrst", :E),
+                :C51 => DhBaseGroupElement(N, :C51,        "cdefghijabmnopqrstkl", :C54),
+                :C52 => DhBaseGroupElement(N, :C52,        "efghijabcdopqrstklmn", :C53),
+                :C53 => DhBaseGroupElement(N, :C53,        "ghijabcdefqrstklmnop", :C52),
+                :C54 => DhBaseGroupElement(N, :C54,        "ijabcdefghstklmnopqr", :C51),
+                :σ1 => DhBaseGroupElement(N, :σ1,          "jihgfedcbatsrqponmlk", :σ1),
+                :σ2 => DhBaseGroupElement(N, :σ2,          "bajihgfedclktsrqponm", :σ2),
+                :σ3 => DhBaseGroupElement(N, :σ3,          "dcbajihgfenmlktsrqpo", :σ3),
+                :σ4 => DhBaseGroupElement(N, :σ4,          "fedcbajihgponmlktsrq", :σ4),
+                :σ5 => DhBaseGroupElement(N, :σ5,          "hgfedcbajirqponmlkts", :σ5),
+                :σh => DhBaseGroupElement(N, :σh,          "klmnopqrstabcdefghij", :σh),
+                :S51 => DhBaseGroupElement(N, :S51,        "mnopqrstklcdefghijab", :S54),
+                :S52 => DhBaseGroupElement(N, :S52,        "opqrstklmnefghijabcd", :S53),
+                :S53 => DhBaseGroupElement(N, :S53,        "qrstklmnopghijabcdef", :S52),
+                :S54 => DhBaseGroupElement(N, :S54,        "stklmnopqrijabcdefgh", :S51),
+                :σ1σh => DhBaseGroupElement(N, :σ1σh,       "tsrqponmlkjihgfedcba", :σ1σh),
+                :σ2σh => DhBaseGroupElement(N, :σ2σh,       "lktsrqponmbajihgfedc", :σ2σh),
+                :σ3σh => DhBaseGroupElement(N, :σ3σh,       "nmlktsrqpodcbajihgfe", :σ3σh),
+                :σ4σh => DhBaseGroupElement(N, :σ4σh,       "ponmlktsrqfedcbajihg", :σ4σh),
+                :σ5σh => DhBaseGroupElement(N, :σ5σh,       "rqponmlktshgfedcbaji", :σ5σh),
+            )
         elseif N == 6
             els = LittleDict(
                 :E => DhBaseGroupElement(N, :E,            "abcdefghijklmnopqrstuvwx", :E),
                 :C61 => DhBaseGroupElement(N, :C61,        "cdefghijklabopqrstuvwxmn", :C65),
-                :C31 => DhBaseGroupElement(N, :C21,        "efghijklabcdqrstuvwxmnop", :C32),
+                :C31 => DhBaseGroupElement(N, :C31,        "efghijklabcdqrstuvwxmnop", :C32),
                 :C21 => DhBaseGroupElement(N, :C21,        "ghijklabcdefstuvwxmnopqr", :C21),
                 :C32 => DhBaseGroupElement(N, :C32,        "ijklabcdefghuvwxmnopqrst", :C31),
                 :C65 => DhBaseGroupElement(N, :C65,        "klabcdefghijwxmnopqrstuv", :C61),

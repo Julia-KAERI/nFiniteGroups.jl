@@ -18,7 +18,23 @@ Groups = Dict(
     :D2 => DGroup(2),
     :D3 => DGroup(3),
     :D4 => DGroup(4),
+    :D5 => DGroup(5),
     :D6 => DGroup(6),
+    :D2d => DdGroup(2),
+    :D3d => DdGroup(3),
+    :D2h => DhGroup(2),
+    :D3h => DhGroup(3),
+    :D4h => DhGroup(4),
+    :D5h => DhGroup(5),
+    :D6h => DhGroup(6),
+    :S2 => SGroup(2),
+    :S4 => SGroup(4),
+    :S6 => SGroup(6),
+    :T => TetrahedralGroup(), 
+    :Td => TetrahedralDiagonalGroup(),
+    :O => OctahedralGroup(),
+    :Oh => OctahedralHorizontalGroup(),
+    
 )
 
 order(G::FiniteGroup) = length(G.elements)
@@ -39,9 +55,7 @@ end
 
 Base.inv(g::FiniteGroupElement) = g.inv
 
-Base.:*(a::T, b::T) where T<:PointGroupElement = gmul(a, b)
-
-function gmul(a::T, b::T) where T<:PointGroupElement
+function Base.:*(a::T, b::T) where T<:PointGroupElement
     G = Groups[a.group_rep]
     i, j = G.idxdict[a.sym], G.idxdict[b.sym]
     return G(G.mtable[i, j])

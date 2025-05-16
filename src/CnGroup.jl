@@ -29,15 +29,30 @@ struct CGroup{N} <:AbstractCGroup{N}
         if N == 1
             M = [:E ;; ]
         elseif N == 2
-            M = [ :E :C21 ; :C21 :E]
+            M = [ :E :C21 ; 
+                :C21 :E]
         elseif N == 3
-            M = [ :E :C31 :C32 ; :C31 :C32 :E ; :C32 :E :C31]
+            M = [ :E :C31 :C32 ; 
+                :C31 :C32 :E ; 
+                :C32 :E :C31]
         elseif N == 4
-            M = [ :E :C41 :C21 :C43 ; :C41 :C21 :C43 :E ; :C21 :C43 :E :C41 ; :C43 :E :C41 :C21]
+            M = [ :E :C41 :C21 :C43 ; 
+                :C41 :C21 :C43 :E ; 
+                :C21 :C43 :E :C41 ; 
+                :C43 :E :C41 :C21]
         elseif N == 5
-            M = [ :E :C51 :C52 :C53 :C54 ; :C51 :C52 :C53 :C54 :E ; :C52 :C53 :C54 :E :C51 ; :C53 :C54 :E :C51 :C52 ; :C54 :E :C51 :C52 :C53]
+            M = [ :E :C51 :C52 :C53 :C54 ; 
+                :C51 :C52 :C53 :C54 :E ; 
+                :C52 :C53 :C54 :E :C51 ; 
+                :C53 :C54 :E :C51 :C52 ; 
+                :C54 :E :C51 :C52 :C53]
         elseif N == 6
-            M = [ :E :C61 :C31 :C21 :C32 :C65 ; :C61 :C31 :C21 :C32 :C65 :E ; :C31 :C21 :C32 :C65 :E :C61 ; :C21 :C32 :C65 :E :C61 :C31 ; :C32 :C65 :E :C61 :C31 :C21 ; :C65 :E :C61 :C31 :C21 :C32]
+            M = [ :E :C61 :C31 :C21 :C32 :C65 ; 
+            :C61 :C31 :C21 :C32 :C65 :E ; 
+            :C31 :C21 :C32 :C65 :E :C61 ; 
+            :C21 :C32 :C65 :E :C61 :C31 ; 
+            :C32 :C65 :E :C61 :C31 :C21 ; 
+            :C65 :E :C61 :C31 :C21 :C32]
         end
         
         _idd = Dict([(k => id) for (id, k) in enumerate(keys(els))])

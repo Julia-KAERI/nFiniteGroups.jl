@@ -35,7 +35,7 @@ struct SBaseGroup{N} <: AbstractCBaseGroup{N}
             els = LittleDict(
                 :E => SBaseGroupElement(N, :E, "abcd", :E),
                 :S41 => SBaseGroupElement(N, :S41, "bcda", :S43),
-                :C2 => SBaseGroupElement(N, :C2, "cdab", :C2),
+                :C21 => SBaseGroupElement(N, :C21, "cdab", :C21),
                 :S43 => SBaseGroupElement(N, :S43, "dabc", :S41),
             )
             

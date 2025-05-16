@@ -39,7 +39,7 @@
         \node[red, scale=1.5] at ({\Rb*cos(30)}, {\Rb*sin(30)}) {$\boldsymbol{d}$};
     \end{scope}
 
-    \begin{scope}[xshift=11.2cm]
+    \begin{scope}[xshift=14.0cm]
         \def\Ra{1.3};
         \def\Rb{0.8};
         \draw[ddash, very thick](0,0) circle (1);
@@ -124,8 +124,43 @@
         \node[blue, scale=1.5] at ({\Rb*cos(280)}, {\Rb*sin(280)}) {$\boldsymbol{d}$};
     \end{scope}
 
+       \begin{scope}[xshift=11.2cm, yshift=-2.8cm]
+        \def\Ra{1.3};
+        \def\Rb{0.8};
+        \draw[ddash, very thick](0,0) circle (1);
+        \node[scale=2] at ({\Ra*cos(315) + 0.3}, {\Ra*sin(315)}) {$D_{5}$};
+        \node[fill,minimum size=0.6cm,regular polygon,regular polygon sides=4] at (0, 0) {};
+        \fill[shift={({cos(0)}, {sin(0)})}, rotate=0] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(36)}, {sin(36)})}, rotate=36] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(72)}, {sin(72)})}, rotate=72] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(108)}, {sin(108)})}, rotate=108] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(144)}, {sin(144)})}, rotate=144] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(180)}, {sin(180)})}, rotate=180] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(216)}, {sin(216)})}, rotate=216] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(252)}, {sin(252)})}, rotate=252] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(288)}, {sin(288)})}, rotate=288] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(324)}, {sin(324)})}, rotate=324] (0,0) ellipse (0.05 and 0.1);
 
-    \begin{scope}[xshift=11.2cm, yshift=-2.8cm]
+        \draw[very thick, ddash] ({cos(0)}, {sin(0)}) node [right, teal, scale=1.5]{$d_1$} -- ({cos(180)}, {sin(180)});
+        \draw[very thick, ddash] ({cos(36)}, {sin(36)}) node [above right, teal, scale=1.5]{$d_2$}-- ({cos(216)}, {sin(216)});
+        \draw[very thick, ddash] ({cos(72)}, {sin(72)}) node [above right, teal, scale=1.5]{$d_3$}-- ({cos(252)}, {sin(252)});
+        \draw[very thick, ddash] ({cos(108)}, {sin(108)}) node [above, teal, scale=1.5]{$d_4$}-- ({cos(288)}, {sin(288)});
+        \draw[very thick, ddash] ({cos(144)}, {sin(144)}) node [above left, teal, scale=1.5]{$d_5$}-- ({cos(324)}, {sin(324)});
+        \node[blue, scale=1.5] at ({\Rb*cos(10)}, {\Rb*sin(10)}) {$\boldsymbol{a}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(82)}, {\Rb*sin(82)}) {$\boldsymbol{b}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(154)}, {\Rb*sin(154)}) {$\boldsymbol{c}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(226)}, {\Rb*sin(226)}) {$\boldsymbol{d}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(298)}, {\Rb*sin(298)}) {$\boldsymbol{e}$};        
+
+        \node[red, scale=1.5] at ({\Rb*cos(350)}, {\Rb*sin(350)}) {$\boldsymbol{f}$};
+        \node[red, scale=1.5] at ({\Rb*cos(62)}, {\Rb*sin(62)}) {$\boldsymbol{g}$};
+        \node[red, scale=1.5] at ({\Rb*cos(134)}, {\Rb*sin(134)}) {$\boldsymbol{h}$};
+        \node[red, scale=1.5] at ({\Rb*cos(206)}, {\Rb*sin(206)}) {$\boldsymbol{i}$};
+        \node[red, scale=1.5] at ({\Rb*cos(278)}, {\Rb*sin(278)}) {$\boldsymbol{j}$};
+
+    \end{scope}
+
+    \begin{scope}[xshift=14.0cm, yshift=-2.8cm]
         \def\Ra{1.3};
         \def\Rb{0.8};
         \draw[ddash, very thick](0,0) circle (1);
@@ -313,8 +348,56 @@
         \node[red, scale=1.5] at ({\Rc*cos(350)}, {\Rc*sin(350)}) {$\boldsymbol{p}$};
     \end{scope}
 
-
     \begin{scope}[xshift=11.2cm, yshift=-8.4cm]
+        \def\Ra{1.3};
+        \def\Rb{0.8};
+        \def\Rc{0.65};
+        \draw[very thick](0,0) circle (1);
+        \node[scale=2] at ({\Ra*cos(315)+0.3}, {\Ra*sin(315)}) {$D_{5h}$};
+        \node[fill,minimum size=0.6cm,regular polygon,regular polygon sides=4] at (0, 0) {};
+        \fill[shift={({cos(0)}, {sin(0)})}, rotate=0] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(36)}, {sin(36)})}, rotate=36] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(72)}, {sin(72)})}, rotate=72] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(108)}, {sin(108)})}, rotate=108] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(144)}, {sin(144)})}, rotate=144] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(180)}, {sin(180)})}, rotate=180] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(216)}, {sin(216)})}, rotate=216] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(252)}, {sin(252)})}, rotate=252] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(288)}, {sin(288)})}, rotate=288] (0,0) ellipse (0.05 and 0.1);
+        \fill[shift={({cos(324)}, {sin(324)})}, rotate=324] (0,0) ellipse (0.05 and 0.1);
+
+        \draw[very thick] ({cos(0)}, {sin(0)}) node [teal, right, scale=1.5] {$\sigma_1$} -- ({cos(180)}, {sin(180)});
+        \draw[very thick] ({cos(36)}, {sin(36)}) node [teal, above right, scale=1.5] {$\sigma_2$} -- ({cos(216)}, {sin(216)});
+        \draw[very thick] ({cos(72)}, {sin(72)}) node [teal, above, scale=1.5] {$\sigma_3$} -- ({cos(252)}, {sin(252)});
+        \draw[very thick] ({cos(108)}, {sin(108)}) node [teal, above left, scale=1.5] {$\sigma_4$}-- ({cos(288)}, {sin(288)});
+        \draw[very thick] ({cos(144)}, {sin(144)}) node [teal, above left, scale=1.5] {$\sigma_5$}-- ({cos(324)}, {sin(324)});
+        
+        \node[blue, scale=1.5] at ({\Rb*cos(10)}, {\Rb*sin(10)}) {$\boldsymbol{a}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(62)}, {\Rb*sin(62)}) {$\boldsymbol{b}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(82)}, {\Rb*sin(82)}) {$\boldsymbol{c}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(134)}, {\Rb*sin(134)}) {$\boldsymbol{d}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(154)}, {\Rb*sin(154)}) {$\boldsymbol{e}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(206)}, {\Rb*sin(206)}) {$\boldsymbol{f}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(226)}, {\Rb*sin(226)}) {$\boldsymbol{g}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(278)}, {\Rb*sin(278)}) {$\boldsymbol{h}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(298)}, {\Rb*sin(298)}) {$\boldsymbol{i}$};
+        \node[blue, scale=1.5] at ({\Rb*cos(350)}, {\Rb*sin(350)}) {$\boldsymbol{j}$};
+        
+        \node[red, scale=1.5] at ({\Rc*cos(10)}, {\Rc*sin(10)}) {$\boldsymbol{k}$};
+        \node[red, scale=1.5] at ({\Rc*cos(62)}, {\Rc*sin(62)}) {$\boldsymbol{l}$};
+        \node[red, scale=1.5] at ({\Rc*cos(82)}, {\Rc*sin(82)}) {$\boldsymbol{m}$};
+        \node[red, scale=1.5] at ({\Rc*cos(134)}, {\Rc*sin(134)}) {$\boldsymbol{n}$};
+        \node[red, scale=1.5] at ({\Rc*cos(154)}, {\Rc*sin(154)}) {$\boldsymbol{o}$};
+        \node[red, scale=1.5] at ({\Rc*cos(206)}, {\Rc*sin(206)}) {$\boldsymbol{p}$};
+        \node[red, scale=1.5] at ({\Rc*cos(226)}, {\Rc*sin(226)}) {$\boldsymbol{q}$};
+        \node[red, scale=1.5] at ({\Rc*cos(278)}, {\Rc*sin(278)}) {$\boldsymbol{r}$};
+        \node[red, scale=1.5] at ({\Rc*cos(298)}, {\Rc*sin(298)}) {$\boldsymbol{s}$};
+        \node[red, scale=1.5] at ({\Rc*cos(350)}, {\Rc*sin(350)}) {$\boldsymbol{t}$};
+    \end{scope}
+
+
+
+    \begin{scope}[xshift=14.0cm, yshift=-8.4cm]
         \def\Ra{1.3};
         \def\Rb{0.8};
         \def\Rc{0.65};

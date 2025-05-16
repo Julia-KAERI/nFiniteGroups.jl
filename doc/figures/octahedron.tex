@@ -1,0 +1,69 @@
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{tikz} 
+\usepackage{tikz-3dplot}
+% \usepackage[active,tightpage]{preview}
+\usetikzlibrary{calc}
+\usetikzlibrary{3d}
+
+\usetikzlibrary{arrows.meta} % for arrow size
+\begin{document}
+\tdplotsetmaincoords{80}{110}
+\begin{tikzpicture}[scale=2.5,
+    x={(\raarot cm,\rbarot cm)},%
+    y={(\rabrot cm, \rbbrot cm)},%
+    z={(\racrot, \rbcrot cm)}]
+
+    \coordinate (O) at (0, 0, 0);
+    \coordinate (A) at (1, 0, 0);
+    \coordinate (B) at (0, 1, 0);
+    \coordinate (C) at (-1, 0, 0);
+    \coordinate (D) at (0, -1, 0);
+    \coordinate (E) at (0, 0, 1);
+    \coordinate (F) at (0, 0, -1);
+
+    \fill[fill=gray!20] (A)--(B)--(E);
+    \fill[fill=gray!20] (A)--(D)--(E);
+    \fill[fill=gray!20] (A)--(B)--(F);
+    \fill[fill=gray!20] (A)--(D)--(F);
+    % \fill[fill=red!20] (A)--(D)--(-1,-1,-1);
+
+    \node [below] at (O) {$O$};
+    \draw[-{Latex[scale=1]}, thick] (A) -- (3,0,0) node [above] {$x$};
+    \draw[-{Latex[scale=1]}, thick] (B) -- (0,2,0) node [above] {$y$};
+    \draw[-{Latex[scale=1]}, thick] (E) -- (0,0,2) node [above] {$z$};
+    
+
+
+    \draw[thick, teal] (1,1,1) -- (1, -1, 1)-- (1, -1, -1)-- (1, 1, -1) -- cycle;
+    \draw[thick, teal] (-1,1,1) -- (-1, -1, 1)-- (-1, -1, -1)-- (-1, 1, -1) -- cycle;
+    \draw[thick, teal] (1,1,1) -- (-1,1,1);
+    \draw[thick, teal] (1,-1,1) -- (-1,-1,1);
+    \draw[thick, teal] (1,1,-1) -- (-1,1,-1);
+    \draw[thick, teal] (1,-1,-1) -- (-1,-1,-1);
+    
+    \draw[very thick] (E) node[blue, right] {$e$}-- (B) node [blue, above right] {$b$}-- (F) -- (D) -- cycle;
+    \draw[very thick] (F)-- (A) node[blue, below left] {$a$} -- (E);
+    \draw[very thick, dashed]  (E) -- (C) node [blue, above right] {$c$} -- (F) node [blue, below] {$f$};
+    \draw[very thick] (D)-- (A) -- (B);
+    \draw[very thick, dashed] (B)-- (C) -- (D) node [blue, left] {$d$};
+    \draw[thick, dashed] (O) -- (A);
+    \draw[thick, dashed] (O) -- (B) ;
+    \draw[thick, dashed] (O) -- (E) ;
+    
+    \draw[very thick, red, dashed] (O) -- (0.33, -0.33, 0.33);
+    \draw[-{Latex[scale=1]}, very thick, red] (0.33, -0.33, 0.33) -- (1.2, -1.2, 1.2) node [above] {$8C_3$};
+
+    \draw[very thick, red, dashed] (O) -- (0.5, 0.5, 0);
+    \draw[very thick, red, -{Latex[scale=1]}] (0.5, 0.5, 0) -- (1.7, 1.7, 0) node [below left] {$6C_2$};
+
+    \draw[very thick, red, dashed] (O) -- (0, 0, 1);
+    \draw[very thick, red, -{Latex[scale=1]}] (0, 0, 1) -- (0, 0, 1.4) node [right] {$6C_4,\, 3C_2 = 3C^2_4$};
+
+
+    \filldraw[black] (1, 0, 0) circle (1pt);
+    \filldraw[black] (0, 1, 0) circle (1pt);
+    \filldraw[black] (0, 0, 1) circle (1pt);
+
+\end{tikzpicture}
+\end{document}

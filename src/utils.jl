@@ -81,3 +81,5 @@ function classes(G::T) where T<:FiniteGroup
     end
     return elementclass
 end
+
+

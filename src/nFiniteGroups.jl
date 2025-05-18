@@ -34,12 +34,12 @@ export PointGroup, SpaceGroup, PointGroupElement, SpaceGroupElement
 export PointGroupRepresentation, SpaceGroupRepresentation
 export AbstractTetrahedraBaseGroup, AbstractTetrahedraBaseGroupElement, AbstractTetrahedraBaseGroupClass 
 
-export BaseGroup, BaseGroupElement
-export CBaseGroup, CBaseGroupElement, CvBaseGroup, CvBaseGroupElement, ChBaseGroup, ChBaseGroupElement
-export SBaseGroup, SBaseGroupElement
-export DBaseGroup, DBaseGroupElement, DdBaseGroup, DdBaseGroupElement, DhBaseGroup, DhBaseGroupElement
-export TetrahedralBaseGroup, TetrahedralBaseGroupElement, TetrahedralDiagonalBaseGroup, TetrahedralDiagonalBaseGroupElement
-export OctahedralBaseGroup, OctahedralBaseGroupElement, OctahedralHorizontalBaseGroup, OctahedralHorizontalBaseGroupElement
+# export BaseGroup, BaseGroupElement
+# export CBaseGroup, CBaseGroupElement, CvBaseGroup, CvBaseGroupElement, ChBaseGroup, ChBaseGroupElement
+# export SBaseGroup, SBaseGroupElement
+# export DBaseGroup, DBaseGroupElement, DdBaseGroup, DdBaseGroupElement, DhBaseGroup, DhBaseGroupElement
+# export TetrahedralBaseGroup, TetrahedralBaseGroupElement, TetrahedralDiagonalBaseGroup, TetrahedralDiagonalBaseGroupElement
+# export OctahedralBaseGroup, OctahedralBaseGroupElement, OctahedralHorizontalBaseGroup, OctahedralHorizontalBaseGroupElement
 export find_in_group_by_representation, classes, inv, elements, gmul, multiplication_table, Mtable
 
 
@@ -52,5 +52,5 @@ export DhGroup, DhGroupElement
 export SGroup, SGroupElement
 export TetrahedralGroup, TetrahedralGroupElement, TetrahedralDiagonalGroup, TetrahedralDiagonalGroupElement
 export OctahedralGroup, OctahedralGroupElement, OctahedralHorizontalGroup, OctahedralHorizontalGroupElememnt
-export order, char2row, OhTable
+export Group, order, char2row, OhTable
 end # module nFiniteGroups

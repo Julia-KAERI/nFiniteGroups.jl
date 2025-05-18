@@ -37,6 +37,10 @@ Groups = Dict(
     
 )
 
+Group(s::Symbol) = Groups[s]
+Group(s::String) = Groups[Symbol(s)]
+
+
 order(G::FiniteGroup) = length(G.elements)
 
 function (G::FiniteGroup)(s::Symbol)
